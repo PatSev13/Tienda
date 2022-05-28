@@ -6,11 +6,76 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <html>
     <head>
         <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css"/>
     </head>
+    
+    
     <body>
-        <h1>Página inicial</h1>
-        <p>Esta es la primera página del curso WEB y Patrones...</p>
+
+        <div class="block">
+            <h1>BLOQUE</h1>
+        </div>
+        
+        <!-- etiquetas para agrupar: div, section y article -->
+        <!-- div = para cualquier informacion -->
+        <div>
+            <!-- h=heading=titulos -->
+            <h1>Hola Mundo</h1>
+            <h2>Hola Mundo</h2>
+            <h3>Hola Mundo</h3>
+            <h4>Hola Mundo</h4>
+            <h5>Hola Mundo</h5>
+            <h6>Hola Mundo</h6>
+        </div>
+
+        <!-- section = información dependiente a la pagina -->
+        <section>
+
+            <!-- p = parrafo, es una sucecion de caracteres -->
+            <p>Esta es la primera página del curso WEB y Patrones...</p>
+
+            <!-- ol = ordered list = una lista ordenada -->
+            <ol>
+                <li>first</li>
+                <li>second</li>
+                <li>third</li>
+
+            </ol>
+
+        </section>
+        
+        <!-- article = informacion independiente, se podría mover o usar a otra pagina web -->
+        <article class="class">
+
+            <!-- ul = unoreder list = lista desordenada -->
+            <ul>
+                <li>first</li>
+                <li>second</li>
+                <li>third</li>
+            </ul>
+
+            <!-- a = hipervinculo -->
+            <!-- URL Absoluta: www.oasndfa.com -->
+            <!-- URL Relativas: src= 'user/documentos/asasas/imagen.png' = archivos locales-->
+            <a href="https://youtu.be/dQw4w9WgXcQ">Youtube</a>
+            <a href="home.html">Home</a>
+            <a href="login.html">Login</a>
+
+            <!-- empty tags = etiquetas vacias = no tiene etiqueta de cierre -->
+            <img src="images/cart.png" alt="texto alternativo"/>
+
+            <!-- iframe = para incrustar html -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/L_jWHffIx5E" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+
+            </iframe>
+
+        </article>
+
     </body>
+
+    <footer>
+    </footer>
 </html>

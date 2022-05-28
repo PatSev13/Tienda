@@ -1,0 +1,28 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 26 may. 2022, 20:13:18
+    Author     : Patrick
+*/
+
+/*
+content-box: toma en cuenta contenido, borde y
+padding para el calculo de la caja
+
+border-box: modifica valores de contenido para que coincida
+con nuestro ancho y alto
+*/
+
+.block{
+    background-color: aquamarine;
+    width: 200px;
+    height: 200px;
+    padding: 50px;
+    
+    border: 5px solid purple;
+    box-sizing: border-box;
+    margin: auto;
+    
+}

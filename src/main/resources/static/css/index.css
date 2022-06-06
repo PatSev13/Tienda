@@ -26,3 +26,38 @@ con nuestro ancho y alto
     margin: auto;
     
 }
+
+.static{
+    position: static;
+    border: 3px solid green;
+    top: 400px;
+    left: 50px;
+}
+
+.relative{
+    position: relative;
+    border: 3px solid green;
+    top: 400px;
+    left: 50px;
+    width: 400px;
+    height: 500px;
+    
+}
+
+.fixed{
+    position: fixed;
+    border: 3px solid green;
+    top: 150px;
+    left: 50px;
+    
+}
+
+.absolute{
+    position: absolute;
+    border: 3px solid green;
+    top: 80px;
+    left: 50px;
+    width: 200px;
+    height: 100px;
+    
+}

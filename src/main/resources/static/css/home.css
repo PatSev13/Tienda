@@ -6,3 +6,74 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Created on : 26 may. 2022, 18:05:34
     Author     : Patrick
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap');
+
+/* * = selector universal */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nuosu SIL', serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/background.png);
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+    
+}
+
+.navbar{
+    height: 15vh;
+    width: 100%;
+    margin: auto; /*para centrar los elementos*/
+    display: flex; /* display = como se comportan los elementos en el contenedor, flex = que los elementos estén en el mismo bloque */
+    align-items: center; /*para centrar los objetos*/
+}
+
+.logo{
+    width: 160px;
+    cursor: pointer; /*cambia la forma en que se ve el mouse*/
+}
+
+nav{
+    flex: 1; /*nos dice que tanto crecen los elementos en el contenedor*/
+    padding-left: 60px;
+}
+
+nav ul li{ /*indica una sucesion especifica*/
+    display: inline-block; /*para que diespliegue todo en una misma linea*/
+    list-style: none; /*cambia los puntos de la lista, por nada en este caso*/
+    margin: 0px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: darkslategray;
+}
+
+.contenido h1{
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 15px;
+    color: darkslategray;
+}
+
+.contenido p{
+    font-size: 20px;
+    color: blueviolet;
+}
+
+.mi-imagen{
+    height: 50%;
+    position: absolute;
+    bottom: 50px;
+    right: 160px;
+}

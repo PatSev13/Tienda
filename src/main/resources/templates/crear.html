@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Crear</title>
+        <!-- Referencia a Bootstrap (biblioteca de estilos) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+
+        <form class="col-md-6 offset-md-3" style="border-top: 1px solid #E8E8E8; margin-top: 20px; padding-top: 10px"
+              th:object = "${persona}"
+              th:action = "@{/save}"
+              method="POST">
+            <!-- object = para pasarle el objeto tipo persona o lo que se haya puesto en el controlador -->
+            <!-- action: que queremos hacer, en este caso el save del controlador -->
+
+            <input type="hidden" th:field="*{id}"> <!-- field = nuestro campo en el objeto, toma el atributo del objeto, siempre hay que ponerlo -->
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">Nombre</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{nombre}" placeholder="Nombre cliente">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">Apellido 1</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{apellido1}" placeholder="Apellido 1">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">Apellido 2</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{apellido2}" placeholder="Apellido 2">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">Teléfono</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{telefono}" placeholder="Teléfono">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" th:field="*{email}" placeholder="Email">
+                </div>
+            </div>
+
+            <div class="form-group mb-3 row">
+                <label class="col-sm-2 col-form-label" for="paises">Pais</label>
+                <div class="col-sm-10">
+                    <!-- select posee las diferentes opciones -->
+                    <select th:field="*{pais}" class="form-control form-control-sm col-md-6" id="pais" aria-describedby="emailHelp">
+                        <!-- el valor de la opcion serian los id de los paises, el texto (o "key") serian los nombres -->
+                        <option th:each="x:${paises}"
+                                th:value="${x.id}"
+                                th:text="${x.pais}"/> 
+                        <!-- por cada x (each), en este caso un país en la lista paises, se agrega un valor (value) 
+                        el id en este caso y el nombre del pais (text)-->
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit" value="Guardar">Submit</button>
+
+        </form>
+    </body>
+</html>

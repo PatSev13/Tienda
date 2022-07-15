@@ -14,6 +14,7 @@
               th:object = "${persona}"
               th:action = "@{/save}"
               method="POST">
+            <!-- el objeto lo definen las comillas del controlador -->
             <!-- object = para pasarle el objeto tipo persona o lo que se haya puesto en el controlador -->
             <!-- action: que queremos hacer, en este caso el save del controlador -->
 
@@ -62,7 +63,7 @@
                         <option th:each="x:${paises}"
                                 th:value="${x.id}"
                                 th:text="${x.pais}"/> 
-                        <!-- por cada x (each), en este caso un país en la lista paises, se agrega un valor (value) 
+                        <!-- por cada x (each) (las comillas del controlador), en este caso un país en la lista paises, se agrega un valor (value) 
                         el id en este caso y el nombre del pais (text)-->
                     </select>
                 </div>

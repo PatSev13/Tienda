@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+          xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head th:fragment="head"> <!-- fragment: cuando se use una etiqueta se exporte a otro html, para reutilizar mediante thymeleaft -->
         <title>TODO supply a title</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -18,13 +19,16 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
+                            <!-- si está autenticado muestre dicho valor -->
+                            <li sec:authorize="isAuthenticated()" class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
-                            <li class="nav-item">
+                            <!-- si tiene cierto role aparece -->
+                            <li sec:authorize="hasRole('ROLE_USER')" class="nav-item">
                                 <a class="nav-link" href="#">Link</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <!-- si tiene cualquiera de esos roles aparece -->
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')" class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
                                 </a>
@@ -35,7 +39,7 @@
                                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
+                            <li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item">
                                 <a class="nav-link disabled">Disabled</a>
                             </li>
                         </ul>

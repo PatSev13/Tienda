@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+          xmlns:sec="http://thymeleaft.org/extras/spring-security"> <!-- namespaces -->
     <head th:replace="plantilla/template::head">
         <!--<title>Persona</title>-->
     </head>
@@ -13,6 +14,7 @@
         <a href="/personaN" style="text-decoration: none; color: #212529">
             <h1 th:text="${titulo}"></h1> <!-- $ = parámetro (desde el controlador) -->
             <h1 th:text="#{cliente.nombre}"></h1>
+            <span sec:authentication="name"></span>
         </a>
 
         <table class="table table-dark table-hover">

@@ -22,7 +22,7 @@ public class PersonaController {
     @Autowired
     private IPaisService paisService;
     
-    @GetMapping("/persona") //Para que cuando le llegue x html haga x cosas. Modo de conectar con el front-end
+    @GetMapping("/persona") //Para que cuando le llegue x html haga x cosas. Modo de conectar con el front-end. Esto es un end-point
     public String index (Model model){ //Para poder enviar información al html
         List<Persona> listaPersona = personaService.getAllPersona();
         model.addAttribute("titulo", "Tabla Personas");

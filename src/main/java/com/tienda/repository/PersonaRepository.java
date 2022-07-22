@@ -6,5 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PersonaRepository extends CrudRepository<Persona, Long>{
+    Persona findByNombre (String nombre); //Método para encontrar algo en la base de datos por x columna
+    
     
 }

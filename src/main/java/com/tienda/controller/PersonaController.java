@@ -4,7 +4,9 @@ import com.tienda.entity.Pais;
 import com.tienda.entity.Persona;
 import com.tienda.service.IPaisService;
 import com.tienda.service.IPersonaService;
+import java.io.FileNotFoundException;
 import java.util.List;
+import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -64,5 +66,11 @@ public class PersonaController {
         //Se quita el Model model porque no necesito pasarle nada
         personaService.delete(idPersona); //Para devolver la persona que tiene el id que estamos pasando
         return "redirect:/persona";
+    }     
+    
+    
+    @GetMapping("/reporte/{format}")
+    public String generarReporte(@PathVariable String format) throws FileNotFoundException, JRException{
+        return personaService.exportReport(format);
     }
 }
